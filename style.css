@@ -7,6 +7,7 @@ body{
 }
 a{
     text-decoration: none;
+    color: #000;
 }
 .header-title{
     background-color: #f6f6f6;
@@ -54,6 +55,12 @@ a{
     margin-bottom: 40px;
     margin-top: 20px;
     font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.header-btn:hover{
+    transition: 200ms;
+    transform: scale(1.006);
+    opacity: 0.95;
 }
 .fonctionnement{
     display: flex;
@@ -126,14 +133,14 @@ align-items: center;
     gap: 20px;
 }
 .restaurant h2{
-   margin-right: 56vw;
-   width: 30vw;
+   padding-left: 25px;
 }
 .restaurant-card{
     /* width: 90vw; */
     background-color: white;
     border-radius: 15px;
     line-height: 0.3;
+    position: relative;
     
 }
 .restaurant-card img{
@@ -150,25 +157,52 @@ align-items: center;
 .restaurant-card .card-text{
     padding-left: 15px;
     font-weight: 100;
+    margin-bottom: 20px;
     
 }
-.row{
-    display: flex;
-    flex-direction: row;
-    position: relative;
+.restaurant-card i{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
 }
-.fa-heart{
+
+.hearth{
+    position: absolute;
+    right: 20px;
+    display: flex;
+}
+.hearth .solid-hearth:active{
+    display: none;
+}
+.fa{
+    display: none;
+}
+.solid-hearth{
+    opacity: 0;
+    font-size: 20px;
+    transform: scaleY(1.2);
+}
+.solid-hearth:active {
+    opacity: 1;
+    background-clip: text;
+    background-image: linear-gradient(to top, #9356DC, #FF79DA);
+    color: transparent;
+}
+.empty-hearth{
+    transform: scaleY(1.2);
+    font-size: 20px;
+}
+/* .fa-regular .fa-heart{
     cursor: pointer;
-    transition: transform 0.3s ease;
     position: absolute;
     right: 20px;
     color: gray;
 }
-.fa-heart:active{
+.fa-regular .fa-heart:active{
     background-color: #9356DC;
     transform: scale(0.9);
     color: white;
-}
+} */
 .footer-content{
     background-color: #353535;
     color: white;
@@ -221,6 +255,10 @@ max-height: 113px;
 .main-title{
     margin-left: 100px;
 }
+.restaurant h2{
+    margin-right: 56vw;
+    width: 30vw;
+ }
 .restaurant{
     display: flex;
     flex-direction: row;
@@ -275,4 +313,3 @@ align-items: end;
      max-width: 1200px;
 }
 }
-..
