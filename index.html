@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ohmyfood</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style.scss">
+    <link rel="stylesheet" href="scss/index.scss">
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -19,7 +18,8 @@
             <img src="Images et textes Ohmyfood/images/logo/ohmyfood.png" alt="Logo de ohmyfood">
         </div>
         <div class="localisation">
-           <img src="Images et textes Ohmyfood/images/Header/Location.svg" alt="localisation">
+            <i class="fa-sharp fa-solid fa-location-dot"></i>
+            <h3 class="localisation-title"> Paris, Belleville </h3>
         </div>
         <div class="header-title">
             <h1 class="header-title1">Réservez le menu qui vous convient</h1>
@@ -51,7 +51,7 @@
         </div>
         
         <div class="restaurant">
-            <h2 class="main-title"> restaurants </h2>
+            <h2 class="main-title"> Restaurants </h2>
             <div class="all-card">
             <div class="restaurant-card">
                 <a href="#">
@@ -59,8 +59,13 @@
                 <h3 class="card-content">La palette du goût</h3>
                 <h4 class="card-text">Ménilmontant</h4>
                 </a>
-                    <i class="empty-hearth fa-regular fa-heart"></i>
-                    <i class="solid-hearth fa-solid fa-heart"></i>    
+                    <label>
+                        <input type="checkbox" name="hearth">
+                            <div class="hearth-check">
+                            <i class="empty-hearth fa-regular fa-heart"></i>
+                            <i class="solid-hearth fa-solid fa-heart"></i>
+                        </div>
+                     </label>
             </div>
             <div class="restaurant-card">
                 <a href="#">
@@ -68,8 +73,13 @@
                 <h3 class="card-content">La note enchantée</h3>
                 <h4 class="card-text">Charonne</h4>
                 </a>
-                    <i class="empty-hearth fa-regular fa-heart"></i>
-                    <i class="solid-hearth fa-solid fa-heart"></i>
+                <label>
+                    <input type="checkbox" name="hearth">
+                        <div class="hearth-check">
+                        <i class="empty-hearth fa-regular fa-heart"></i>
+                        <i class="solid-hearth fa-solid fa-heart"></i>
+                    </div>
+                 </label>
             </div>
             <div class="restaurant-card">
                 <a href="#">
@@ -77,8 +87,13 @@
                 <h3 class="card-content">À la française</h3>
                 <h4 class="card-text">Cité Rouge</h4>
                 </a>
-                    <i class="empty-hearth fa-regular fa-heart"></i>
-                    <i class="solid-hearth fa-solid fa-heart"></i>
+                <label>
+                    <input type="checkbox" name="hearth">
+                        <div class="hearth-check">
+                        <i class="empty-hearth fa-regular fa-heart"></i>
+                        <i class="solid-hearth fa-solid fa-heart"></i>
+                    </div>
+                 </label>
             </div>
             <div class="restaurant-card">
                 <a href="#">
@@ -86,8 +101,13 @@
                 <h3 class="card-content">Le délice des sens</h3>
                 <h4 class="card-text">Folie-Méricourt</h4>
                 </a>
-                    <i class="empty-hearth fa-regular fa-heart"></i>
-                    <i class="solid-hearth fa-solid fa-heart"></i>
+                <label>
+                    <input type="checkbox" name="hearth">
+                        <div class="hearth-check">
+                        <i class="empty-hearth fa-regular fa-heart"></i>
+                        <i class="solid-hearth fa-solid fa-heart"></i>
+                    </div>
+                 </label>
             </div>
         </div>
 
