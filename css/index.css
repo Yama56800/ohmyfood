@@ -191,6 +191,11 @@ a {
   bottom: 20px;
 }
 
+.hearth-check i {
+  transition: 0.7s;
+  font-size: 20px;
+}
+
 .solid-hearth {
   opacity: 0;
   color: transparent;
@@ -324,4 +329,4 @@ label input[type=checkbox]:checked ~ .hearth-check i {
   .all-card {
     max-width: 1392px;
   }
-}/*# sourceMappingURL=index.css.map */
+}
