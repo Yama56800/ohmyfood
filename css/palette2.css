@@ -161,14 +161,16 @@ h3 {
 }
 
 .menu-text {
+  overflow: hidden;
+  white-space: nowrap;
   line-height: 0.6;
+  text-overflow: ellipsis;
 }
 
 .menu-card p {
   display: flex;
   flex-direction: row;
   font-size: 16px;
-  line-height: 1.7;
 }
 
 .menu-ok i {
