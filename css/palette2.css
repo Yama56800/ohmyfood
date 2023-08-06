@@ -144,16 +144,16 @@ h3 {
   color: #FF79DA;
 }
 
-.menu-card:hover i {
-  animation: quarterspin 0.5s ease;
-}
 @keyframes quarterspin {
   0% {
-    transform: rotate(-270deg);
+    transform: rotate(-276deg);
   }
   100% {
     transform: rotate(0);
   }
+}
+.menu-card:hover i {
+  animation: quarterspin 0.5s ease;
 }
 
 .menu-card:hover .menu-ok {
