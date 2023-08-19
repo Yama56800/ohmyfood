@@ -1,11 +1,7 @@
-@keyframes quarterspin {
-    0% {
-        transform: rotate(-270deg);
-    }
-    100%{
-        transform: rotate(0);
-    }
-}
+@use "./animation";
+@use "./color";
+@use "./hearth";
+
 body{
     margin: 0;
     font-family: 'Roboto';
@@ -58,7 +54,7 @@ a{
 .solid-hearth{
     opacity: 0;
     color: transparent;
-    background-image: linear-gradient(to top, #9356DC, #FF79DA);
+    background-image: linear-gradient(to top, color.$main-color, color.$second-color);
     background-clip: text ;
 }
 label input[type="checkbox"] 
@@ -69,8 +65,9 @@ label input[type="checkbox"]
 label input[type="checkbox"]:checked ~ .hearth-check i 
 {  background-clip: text;
     color: transparent;
-    background-image: linear-gradient(to top, #9356DC, #FF79DA);
+    background-image: linear-gradient(to top, color.$main-color, color.$second-color);
     opacity: 1;    
+    
 }
 .hearth-check i {
     position: absolute;
@@ -82,7 +79,7 @@ label input[type="checkbox"]:checked ~ .hearth-check i
 .menu{
     position: relative;
     bottom: 40px;
-    background-color:#F6F6F6 ;
+    background-color: color.$height-color ;
     width: 100%;
     border-radius: 40px 40px 0px 0px;
     justify-content: center;
@@ -90,6 +87,7 @@ label input[type="checkbox"]:checked ~ .hearth-check i
     flex-direction: column;
     align-items: center;
     max-width: 1055px;
+    
 }
 h1{
     font-family: Shrikhand;
@@ -104,7 +102,7 @@ h1{
 }
 h2{
     font-size: 20px;
-    border-bottom: 3px solid #99E2D0;
+    border-bottom: 3px solid color.$six-color;
     width: 50px;
     margin-left: 20px;
     font-weight: 100;
@@ -113,9 +111,19 @@ h2{
 h3{
     font-size: 19px;
 }
+
 .menu-card{
-    
-    background-color: white;
+    $numbercard: 9;
+    @for $i from 1 through $numbercard {
+        &:nth-child(#{$i}) {
+            animation-delay: 200ms *
+            $i ;
+        }
+    }
+
+    animation: apparition 500ms ;
+    animation-fill-mode: both ;
+    background-color: color.$seven-color;
     
     margin: 15px;
     padding-left: 15px;
@@ -130,7 +138,7 @@ h3{
 
 .menu-ok{
     
-    background: #99E2D0;
+    background: color.$six-color;
     margin-right: -70px;
     border-radius: 0px 20px 20px 0px;
     width: 4rem;
@@ -138,7 +146,7 @@ h3{
     align-items: center;
     justify-content: center;
     transition: 0.5s;
-    color: #FF79DA;
+   
     
 }
 @keyframes quarterspin {
@@ -150,7 +158,7 @@ h3{
     }
   }
   .menu-card:hover i {
-    animation: quarterspin 0.5s ease;
+    animation: quarterspin 0.5s ease ;
   }
 .menu-card:hover .menu-ok{
     margin-right:0px;
@@ -162,6 +170,7 @@ h3{
     line-height: 0.6;
     text-overflow: ellipsis;
     
+    
 }
 .menu-card p{
     display: flex;
@@ -171,8 +180,8 @@ h3{
     
 }
 .menu-ok i{
-    color: #99E2D0;
-    background-color:white ; 
+    color: color.$six-color;
+    background-color: color.$seven-color ; 
     border-radius: 50%;
     font-size: 20px;
     padding: 5px;
@@ -207,18 +216,23 @@ h3{
 .footer-btn{
     width: 238px;
     height: 47px;
-    background:linear-gradient(to top, #9356DC, #FF79DA);
+    background:linear-gradient(to top, color.$main-color, color.$second-color);
     border: none;
     border-radius: 30px;
-    color: white;
+    color: color.$seven-color;
     margin-bottom: 40px;
     margin-top: 20px;
     font-size: 16px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+.footer-btn:hover{
+    transition: 200ms;
+    transform: scale(1.006);
+    opacity: 0.85;
+}
 .footer-content{
     background-color: #353535;
-    color: white;
+    color: color.$seven-color;
     margin-top: -40px;
 }
 .footer-title{
@@ -238,7 +252,7 @@ h3{
     
 }
 .footer-link a{
-    color: white;
+    color: color.$seven-color;
 }
 
 @media (min-width: 780px) {

@@ -1,17 +1,42 @@
+@use "./color";
+@use "./animation";
+@use "./hearth";
+@mixin shadow{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.loader{
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: color.$seven-color;
+    position: fixed;
+    z-index: 9999;
+    opacity: 0.7;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation: loading 500ms 3s  ;
+    animation-fill-mode: forwards;
+    i{
+        animation: rotation 3s;
+        font-size: 70px;
+    }
+}
 
 body {
     margin: 0;
     font-family: 'Roboto';
 }
-.main-container{
 
-}
 a{
     text-decoration: none;
     color: #000;
 }
 .header-title{
-    background-color: #f6f6f6;
+    background-color: color.$height-color ;
    padding: 30px;
     text-align: center;
     font-size: 14px;
@@ -39,7 +64,7 @@ a{
 .localisation{
     display: flex;
     flex-direction: row;
-    background-color: #EAEAEA;
+    background-color: color.$height-color;
     width: 100%;
     justify-content: center;
     gap: 20px;
@@ -49,7 +74,7 @@ a{
 .localisation i{
     display: flex;
     align-items: center;
-    color: #353535;
+    color: color.$nine-color;
     font-size: 21px;
 }
 .localisation img{
@@ -59,20 +84,16 @@ a{
 .header-btn{
     width: 238px;
     height: 47px;
-    background:linear-gradient(to top, #9356DC, #FF79DA);
+    background:linear-gradient(to top, color.$main-color, color.$second-color);
     border: none;
     border-radius: 30px;
-    color: white;
+    color: color.$seven-color;
     margin-bottom: 40px;
     margin-top: 20px;
     font-size: 16px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    @include shadow()
 }
-.header-btn:hover{
-    transition: 200ms;
-    transform: scale(1.006);
-    opacity: 0.95;
-}
+
 .fonctionnement{
     display: flex;
     
@@ -87,15 +108,15 @@ a{
 }
 .fonctionnement-card{
     text-align: center;
-    background-color: #F5F5F5;
+    background-color: color.$height-color;
     border-radius: 25px;
     display: inline-flex;
     justify-content: center;
     width: 80vw;
-    height: 12vw;
+    height: 17vw;
     position: relative;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    @include shadow()
     
 
 }
@@ -103,39 +124,39 @@ a{
     justify-content: center;
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 18px;
     align-items: center;
 }
 .number{
     display: flex;
     position: absolute;
     left: -8px;
-    border: 2px solid #9356DC;
+    border: 2px solid color.$main-color;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
     padding: 3px;
-    background-color: #9356DC;
+    background-color: color.$main-color;
     height: 14px;
-    color: white;
+    color: color.$seven-color;
     width: 14px;
     font-style: normal;
     font-size: 12px;
 }
 .fa-mobile-screen-button{
     padding-right: 15px;
-    color: #7E7E7E;
+    color: color.$ten-color;
 }
 .fa-bars{
     padding-right: 15px;
-    color: #7E7E7E;
+    color: color.$ten-color;
 }
 .fa-store{
-    color: #9356DC;
+    color: color.$main-color;
     padding-right: 15px;
 }
 .restaurant{
-    background-color: #F5F5F5;
+    background-color: color.$height-color;
     margin-top: 50px;
     padding-bottom: 40px;
 }
@@ -151,7 +172,7 @@ align-items: center;
 }
 .restaurant-card{
     /* width: 90vw; */
-    background-color: white;
+    background-color: color.$seven-color;
     border-radius: 15px;
     line-height: 0.3;
     position: relative;
@@ -188,7 +209,7 @@ align-items: center;
 .solid-hearth{
     opacity: 0;
     color: transparent;
-    background-image: linear-gradient(to top, #9356DC, #FF79DA);
+    background-image: linear-gradient(to top, color.$main-color, color.$second-color);
     background-clip: text
 }
 label input[type="checkbox"] 
@@ -202,12 +223,12 @@ label input[type="checkbox"]
 label input[type="checkbox"]:checked ~ .hearth-check i 
 {  background-clip: text;
     color: transparent;
-    background-image: linear-gradient(to top, #9356DC, #FF79DA);
+    background-image: linear-gradient(to top, color.$main-color, color.$second-color);
     opacity: 1;    
 }
 .footer-content{
-    background-color: #353535;
-    color: white;
+    background-color: color.$nine-color;
+    color: color.$seven-color;
 }
 .footer-title{
     padding-left: 20px;
@@ -227,7 +248,7 @@ label input[type="checkbox"]:checked ~ .hearth-check i
     
 }  
 .footer-link a{
-    color: white;
+    color: color.$seven-color;
 }
 @media (max-width :1024px) {
     .footer-title{
@@ -242,9 +263,7 @@ label input[type="checkbox"]:checked ~ .hearth-check i
     
 
 }
-element {
 
-}
 .header-title1{
     font-size: 29px;
 }
@@ -327,7 +346,4 @@ align-items: end;
 .all-card{   
      max-width: 1392px;
 }
-}
-body{
-    
 }

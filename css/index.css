@@ -1,3 +1,66 @@
+@keyframes loading {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes apparition {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  position: fixed;
+  z-index: 9999;
+  opacity: 0.7;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  animation: loading 500ms 3s;
+  animation-fill-mode: forwards;
+}
+.loader i {
+  animation: rotation 3s;
+  font-size: 70px;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  position: fixed;
+  z-index: 9999;
+  opacity: 0.7;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  animation: loading 500ms 3s;
+  animation-fill-mode: forwards;
+}
+.loader i {
+  animation: rotation 3s;
+  font-size: 70px;
+}
+
 body {
   margin: 0;
   font-family: "Roboto";
@@ -9,7 +72,7 @@ a {
 }
 
 .header-title {
-  background-color: #f6f6f6;
+  background-color: #F6F6F6;
   padding: 30px;
   text-align: center;
   font-size: 14px;
@@ -36,7 +99,7 @@ a {
 .localisation {
   display: flex;
   flex-direction: row;
-  background-color: #EAEAEA;
+  background-color: #F6F6F6;
   width: 100%;
   justify-content: center;
   gap: 20px;
@@ -67,12 +130,6 @@ a {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.header-btn:hover {
-  transition: 200ms;
-  transform: scale(1.006);
-  opacity: 0.95;
-}
-
 .fonctionnement {
   display: flex;
   flex-direction: column;
@@ -87,12 +144,12 @@ a {
 
 .fonctionnement-card {
   text-align: center;
-  background-color: #F5F5F5;
+  background-color: #F6F6F6;
   border-radius: 25px;
   display: inline-flex;
   justify-content: center;
   width: 80vw;
-  height: 12vw;
+  height: 17vw;
   position: relative;
   align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -102,7 +159,7 @@ a {
   justify-content: center;
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 18px;
   align-items: center;
 }
 
@@ -139,7 +196,7 @@ a {
 }
 
 .restaurant {
-  background-color: #F5F5F5;
+  background-color: #F6F6F6;
   margin-top: 50px;
   padding-bottom: 40px;
 }
