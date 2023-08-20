@@ -1,10 +1,10 @@
 @use "./color";
 @use "./animation";
-@use "./hearth";
+@import "./hearth.scss";
 @mixin shadow{
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
+ @include hearth;
 .loader{
    
     display: flex;
@@ -91,9 +91,14 @@ a{
     margin-bottom: 40px;
     margin-top: 20px;
     font-size: 16px;
-    @include shadow()
+    @include shadow();
+    cursor: pointer;
+    
 }
 
+.header-btn:hover{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+}
 .fonctionnement{
     display: flex;
     
@@ -116,9 +121,15 @@ a{
     height: 17vw;
     position: relative;
     align-items: center;
-    @include shadow()
-    
-
+    @include shadow();
+    &:hover i{
+        color: color.$main-color;
+    }
+    i {
+        padding-right: 15px;
+    color: color.$ten-color;
+   
+    }
 }
 .fonctionnement-content{
     justify-content: center;
@@ -143,18 +154,6 @@ a{
     font-style: normal;
     font-size: 12px;
 }
-.fa-mobile-screen-button{
-    padding-right: 15px;
-    color: color.$ten-color;
-}
-.fa-bars{
-    padding-right: 15px;
-    color: color.$ten-color;
-}
-.fa-store{
-    color: color.$main-color;
-    padding-right: 15px;
-}
 .restaurant{
     background-color: color.$height-color;
     margin-top: 50px;
@@ -163,7 +162,7 @@ a{
 .all-card{
     display: flex;
     flex-direction: column;
-align-items: center;
+    align-items: center;
     gap: 20px;
 }
 .restaurant h2{
@@ -171,24 +170,26 @@ align-items: center;
    padding-top:50px;
 }
 .restaurant-card{
-    /* width: 90vw; */
     background-color: color.$seven-color;
     border-radius: 15px;
     line-height: 0.3;
     position: relative;
-    
+    width: 95vw;
+    height: 300px;
 }
 .restaurant-card img{
-    width: 90vw;
-    height: 47vw;
+    width: 100%;
+    height: 220px;
     border-radius: 15px 15px 0px 0px;
-    max-width: 500px;
-    max-height: 300px;
+    
+    
     object-fit: cover;
 }
 .restaurant-card .card-content{
     padding-left: 15px;
     font-weight: 900;
+    padding-top: 10px;
+
 }
 .restaurant-card .card-text{
     padding-left: 15px;
@@ -205,27 +206,9 @@ align-items: center;
 .hearth-check i{
     transition: 0.7s;
     font-size: 20px;
-}
-.solid-hearth{
-    opacity: 0;
-    color: transparent;
-    background-image: linear-gradient(to top, color.$main-color, color.$second-color);
-    background-clip: text
-}
-label input[type="checkbox"] 
-{  position: absolute;
-    right: 20px;
-    bottom: 20px;
-    position: absolute;
-    opacity: 0;
     cursor: pointer;
 }
-label input[type="checkbox"]:checked ~ .hearth-check i 
-{  background-clip: text;
-    color: transparent;
-    background-image: linear-gradient(to top, color.$main-color, color.$second-color);
-    opacity: 1;    
-}
+
 .footer-content{
     background-color: color.$nine-color;
     color: color.$seven-color;
@@ -249,6 +232,19 @@ label input[type="checkbox"]:checked ~ .hearth-check i
 }  
 .footer-link a{
     color: color.$seven-color;
+}
+@media (min-width :750px)
+{
+    .all-card{
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px 50px;
+    }
+    .restaurant-card{
+        width: 45vw;
+    }
+
 }
 @media (max-width :1024px) {
     .footer-title{
@@ -301,16 +297,19 @@ flex-wrap: wrap;
 
 }
 .all-card{
-    max-width: 975px;
+    max-width: 1300px;
     flex-direction: row;
     display: flex;
     flex-wrap: wrap;
     gap: 50px 90px;
     justify-content: center;
 }
+.restaurant-card{
+    width: 40vw;
+}
 .restaurant-card img {
-    width: 30vw;
-    height: 15vw;
+    width: 100%;
+    height: 220px;
     object-fit: cover;
 }
 .footer-title{
@@ -331,7 +330,7 @@ align-items: end;
 @media (min-width: 1440px){
     .fonctionnement-card{
         max-width: 700px;
-    max-height: 113px;
+        max-height: 113px;
     
     }
 .fonctionnement-title{
@@ -344,6 +343,6 @@ align-items: end;
         gap: 30px;
     }
 .all-card{   
-     max-width: 1392px;
+     max-width: 2200px;
 }
 }

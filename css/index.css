@@ -41,6 +41,31 @@
   font-size: 70px;
 }
 
+.solid-hearth {
+  opacity: 0;
+  color: transparent;
+  background-image: linear-gradient(to top, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+
+label input[type=checkbox] {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+label input[type=checkbox]:checked ~ .hearth-check i {
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to top, #9356DC, #FF79DA);
+  opacity: 1;
+}
+
 .loader {
   display: flex;
   align-items: center;
@@ -128,6 +153,11 @@ a {
   margin-top: 20px;
   font-size: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.header-btn:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
 }
 
 .fonctionnement {
@@ -153,6 +183,13 @@ a {
   position: relative;
   align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.fonctionnement-card:hover i {
+  color: #9356DC;
+}
+.fonctionnement-card i {
+  padding-right: 15px;
+  color: #7E7E7E;
 }
 
 .fonctionnement-content {
@@ -180,21 +217,6 @@ a {
   font-size: 12px;
 }
 
-.fa-mobile-screen-button {
-  padding-right: 15px;
-  color: #7E7E7E;
-}
-
-.fa-bars {
-  padding-right: 15px;
-  color: #7E7E7E;
-}
-
-.fa-store {
-  color: #9356DC;
-  padding-right: 15px;
-}
-
 .restaurant {
   background-color: #F6F6F6;
   margin-top: 50px;
@@ -214,19 +236,18 @@ a {
 }
 
 .restaurant-card {
-  /* width: 90vw; */
   background-color: white;
   border-radius: 15px;
   line-height: 0.3;
   position: relative;
+  width: 95vw;
+  height: 300px;
 }
 
 .restaurant-card img {
-  width: 90vw;
-  height: 47vw;
+  width: 100%;
+  height: 220px;
   border-radius: 15px 15px 0px 0px;
-  max-width: 500px;
-  max-height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -234,6 +255,7 @@ a {
 .restaurant-card .card-content {
   padding-left: 15px;
   font-weight: 900;
+  padding-top: 10px;
 }
 
 .restaurant-card .card-text {
@@ -251,31 +273,7 @@ a {
 .hearth-check i {
   transition: 0.7s;
   font-size: 20px;
-}
-
-.solid-hearth {
-  opacity: 0;
-  color: transparent;
-  background-image: linear-gradient(to top, #9356DC, #FF79DA);
-  -webkit-background-clip: text;
-          background-clip: text;
-}
-
-label input[type=checkbox] {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  position: absolute;
-  opacity: 0;
   cursor: pointer;
-}
-
-label input[type=checkbox]:checked ~ .hearth-check i {
-  -webkit-background-clip: text;
-          background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(to top, #9356DC, #FF79DA);
-  opacity: 1;
 }
 
 .footer-content {
@@ -301,6 +299,17 @@ label input[type=checkbox]:checked ~ .hearth-check i {
   color: white;
 }
 
+@media (min-width: 750px) {
+  .all-card {
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px 50px;
+  }
+  .restaurant-card {
+    width: 45vw;
+  }
+}
 @media (max-width: 1024px) {
   .footer-title {
     margin: 0;
@@ -343,16 +352,19 @@ label input[type=checkbox]:checked ~ .hearth-check i {
     flex-wrap: wrap;
   }
   .all-card {
-    max-width: 975px;
+    max-width: 1300px;
     flex-direction: row;
     display: flex;
     flex-wrap: wrap;
     gap: 50px 90px;
     justify-content: center;
   }
+  .restaurant-card {
+    width: 40vw;
+  }
   .restaurant-card img {
-    width: 30vw;
-    height: 15vw;
+    width: 100%;
+    height: 220px;
     -o-object-fit: cover;
        object-fit: cover;
   }
@@ -384,6 +396,6 @@ label input[type=checkbox]:checked ~ .hearth-check i {
     gap: 30px;
   }
   .all-card {
-    max-width: 1392px;
+    max-width: 2200px;
   }
 }

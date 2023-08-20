@@ -1,7 +1,7 @@
 @use "./animation";
 @use "./color";
-@use "./hearth";
-
+@import "./hearth.scss";
+@include hearth;
 body{
     margin: 0;
     font-family: 'Roboto';
@@ -51,30 +51,23 @@ a{
     
     
 }
-.solid-hearth{
-    opacity: 0;
-    color: transparent;
-    background-image: linear-gradient(to top, color.$main-color, color.$second-color);
-    background-clip: text ;
-}
+
 label input[type="checkbox"] 
-{  position: absolute;
+{  position: relative;
+    right: 0;
+    bottom: 0;
     opacity: 0;
-    cursor: pointer;
-}
-label input[type="checkbox"]:checked ~ .hearth-check i 
-{  background-clip: text;
-    color: transparent;
-    background-image: linear-gradient(to top, color.$main-color, color.$second-color);
-    opacity: 1;    
     
 }
+
+
 .hearth-check i {
     position: absolute;
     right: 30px;
     top: 37px;
     font-size: 25px;
     transition: 0.7s;
+    cursor: pointer;
 }
 .menu{
     position: relative;
@@ -224,11 +217,13 @@ h3{
     margin-top: 20px;
     font-size: 16px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 .footer-btn:hover{
     transition: 200ms;
     transform: scale(1.006);
     opacity: 0.85;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
 }
 .footer-content{
     background-color: #353535;
