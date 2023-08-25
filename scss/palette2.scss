@@ -104,17 +104,33 @@ h2{
 h3{
     font-size: 19px;
 }
-
-.menu-card{
-    $numbercard: 9;
+.all-menu{
+    display: contents;
+   
+}
+.menu-content{
+    $numbercard: 5;
     @for $i from 1 through $numbercard {
         &:nth-child(#{$i}) {
-            animation-delay: 200ms *
+            animation-delay: 300ms *
             $i ;
         }
     }
 
-    animation: apparition 500ms ;
+    animation: apparition 1.2s ;
+    animation-fill-mode: both ;
+    
+}
+.menu-card{
+    $numbercard: 4;
+    @for $i from 1 through $numbercard {
+        &:nth-child(#{$i}) {
+            animation-delay: 300ms *
+            $i ;
+        }
+    }
+
+    animation: apparition 600ms ;
     animation-fill-mode: both ;
     background-color: color.$seven-color;
     

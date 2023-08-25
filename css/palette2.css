@@ -166,8 +166,32 @@ h3 {
   font-size: 19px;
 }
 
+.all-menu {
+  display: contents;
+}
+
+.menu-content {
+  animation: apparition 1.2s;
+  animation-fill-mode: both;
+}
+.menu-content:nth-child(1) {
+  animation-delay: 300ms;
+}
+.menu-content:nth-child(2) {
+  animation-delay: 600ms;
+}
+.menu-content:nth-child(3) {
+  animation-delay: 900ms;
+}
+.menu-content:nth-child(4) {
+  animation-delay: 1200ms;
+}
+.menu-content:nth-child(5) {
+  animation-delay: 1500ms;
+}
+
 .menu-card {
-  animation: apparition 500ms;
+  animation: apparition 600ms;
   animation-fill-mode: both;
   background-color: white;
   margin: 15px;
@@ -180,31 +204,16 @@ h3 {
   display: flex;
 }
 .menu-card:nth-child(1) {
-  animation-delay: 200ms;
+  animation-delay: 300ms;
 }
 .menu-card:nth-child(2) {
-  animation-delay: 400ms;
-}
-.menu-card:nth-child(3) {
   animation-delay: 600ms;
 }
+.menu-card:nth-child(3) {
+  animation-delay: 900ms;
+}
 .menu-card:nth-child(4) {
-  animation-delay: 800ms;
-}
-.menu-card:nth-child(5) {
-  animation-delay: 1000ms;
-}
-.menu-card:nth-child(6) {
   animation-delay: 1200ms;
-}
-.menu-card:nth-child(7) {
-  animation-delay: 1400ms;
-}
-.menu-card:nth-child(8) {
-  animation-delay: 1600ms;
-}
-.menu-card:nth-child(9) {
-  animation-delay: 1800ms;
 }
 
 .menu-ok {
