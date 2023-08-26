@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  font-family: "Roboto";
+  background-color: #EAEAEA;
+}
+
+h1 {
+  font-size: 50px;
+  font-family: Shrikhand;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  padding: 20px;
+  line-height: 30px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.arrow {
+  position: absolute;
+  left: 20px;
+  top: 25px;
+  font-size: 20px;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
