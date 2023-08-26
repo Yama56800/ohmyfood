@@ -157,6 +157,9 @@ a {
 }
 
 .header-btn:hover {
+  opacity: 0.85;
+  transform: scale(1.006);
+  transition: 200ms;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
 }
 
